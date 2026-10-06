@@ -2,8 +2,8 @@ import WaIcon from "@/components/WaIcon";
 import Header from "@/components/Header";
 import PropertyCard from "@/components/PropertyCard";
 import EnquiryForm from "@/components/EnquiryForm";
-import { properties, services, corporate, steps, why, guide, faqs } from "@/lib/data";
-import { wa, GENERAL, EMAIL, PHONE } from "@/lib/whatsapp";
+import { properties, services, corporate, steps, why, faqs } from "@/lib/data";
+import { wa, GENERAL, EMAIL, PHONE, INSTAGRAM } from "@/lib/whatsapp";
 
 const Head = ({ e, h, p }) => (
   <div className="head"><p className="eyebrow">{e}</p><h2>{h}</h2>{p && <p className="muted">{p}</p>}</div>
@@ -32,6 +32,7 @@ export default function Home() {
         <section id="stays"><div className="wrap">
           <Head e="Shortlets" h="Stays, ready for you" p="Book directly. No booking-site fees." />
           <div className="grid3">{properties.map((p) => <PropertyCard key={p.slug} p={p} />)}</div>
+          <p className="stay-note">Please confirm availability with us first, before making any payment. More photos are available on request. Looking for more options? <a className="tlink" href={INSTAGRAM} target="_blank" rel="noopener">See more apartments on Instagram</a>.</p>
         </div></section>
 
         <section id="concierge" className="alt-bg"><div className="wrap">
@@ -66,35 +67,22 @@ export default function Home() {
           <div className="grid4">{why.map((w) => <div key={w.t} className="svc plain"><h3>{w.t}</h3><p className="muted">{w.d}</p></div>)}</div>
         </div></section>
 
-        <section id="guide" className="alt-bg"><div className="wrap">
-          <Head e="Haven Guide" h="Lagos, our way" p="A few favourites to start you off. We're happy to tailor a list." />
-          <div className="guide">
-            {guide.map((g) => (
-              <div key={g.cat}>
-                <h3 className="gcat">{g.cat}</h3>
-                {g.items.map((i) => (
-                  <div key={i.n} className="gi"><b>{i.n}</b><span className="eyebrow">{i.a}</span><p className="muted">{i.d}</p></div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div></section>
 
-        <section id="about"><div className="wrap narrow">
+        <section id="about" className="alt-bg"><div className="wrap narrow">
           <Head e="About" h="Hospitality with a personal touch" />
           <p className="muted big">Haven Diamond is a Lagos shortlet and concierge company. We keep our portfolio small and our service personal, so that whether you're here for a weekend, a work trip or a relocation, someone is looking out for you.</p>
         </div></section>
 
-        <section id="enquire" className="alt-bg"><div className="wrap two-col">
+        <section id="enquire"><div className="wrap two-col">
           <div>
             <Head e="Booking & enquiries" h="Tell us your dates" p="Fill this in and it opens WhatsApp with your details ready to send. Prefer to chat? Message us directly." />
             <a className="btn wa" href={GENERAL} target="_blank" rel="noopener"><WaIcon /> Chat on WhatsApp</a>
-            <p className="muted small">+{PHONE.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, "$1 $2 $3 $4")} · {EMAIL}</p>
+            <p className="muted small">+{PHONE.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, "$1 $2 $3 $4")} · <a className="tlink" href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a className="tlink" href={INSTAGRAM} target="_blank" rel="noopener">Instagram</a></p>
           </div>
           <EnquiryForm />
         </div></section>
 
-        <section id="faq"><div className="wrap narrow">
+        <section id="faq" className="alt-bg"><div className="wrap narrow">
           <Head e="Policies & FAQ" h="Good to know" />
           {faqs.map((f) => (
             <details key={f.q} className="faq"><summary>{f.q}<span>+</span></summary><p className="muted">{f.a}</p></details>
@@ -104,7 +92,8 @@ export default function Home() {
 
       <footer><div className="wrap foot">
         <img src="/logo.png" alt="Haven Diamond" className="logo" />
-        <p>Shortlets &amp; concierge across Lekki, Ikoyi, Victoria Island, Ikate, Oniru, Ikeja and Maryland.</p>
+        <p>Shortlets &amp; concierge in Lagos.</p>
+        <p><a className="tlink" href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a className="tlink" href={INSTAGRAM} target="_blank" rel="noopener">Instagram</a></p>
         <p className="eyebrow">© {new Date().getFullYear()} Haven Diamond</p>
       </div></footer>
 
