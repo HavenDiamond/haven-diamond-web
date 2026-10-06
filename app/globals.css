@@ -477,3 +477,12 @@ footer a:hover{color:#fff}
   .btn.ghost:hover{background:transparent;color:var(--ink)}
   .btn-sm:hover{background:none;color:var(--ink)}
 }
+
+/* grey palette from the logo */
+:root{--paper:#E1E1E1;--paper2:#D7D7D7;--muted:#5F5F5F;--line:rgba(20,20,20,.16)}
+.hdr.scrolled{background:rgba(225,225,225,.96)}
+.notice{margin-top:36px;padding:20px 22px;border:1px solid var(--line);background:rgba(255,255,255,.55);display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.6}
+.stay-note{margin-top:28px;font-size:13px;color:var(--muted);line-height:1.7}
+.tlink{text-decoration:underline;text-underline-offset:3px}
+
+:root{--brass:#6F5128;--muted:#555}

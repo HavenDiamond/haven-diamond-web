@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const links = [["Stays", "/#stays"], ["Concierge", "/#concierge"], ["Corporate", "/#corporate"], ["Guide", "/#guide"], ["About", "/#about"], ["FAQ", "/#faq"]];
+const links = [["Stays", "/#stays"], ["Concierge", "/#concierge"], ["Corporate", "/#corporate"], ["About", "/#about"], ["FAQ", "/#faq"]];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
